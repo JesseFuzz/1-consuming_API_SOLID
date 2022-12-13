@@ -3,11 +3,11 @@ import 'package:dio/dio.dart';
 import '../repositories/repository.dart';
 
 class UserController {
-  final dio = Dio();
+  final Dio dio;
   //o tipo é a interface, não a a implementação
   final FetchUserRepository repository;
 
-  UserController({required this.repository});
+  UserController({required this.repository, required this.dio});
 
   Future<void> fetchUser() async {
     //aqui eu recebo o método do repository

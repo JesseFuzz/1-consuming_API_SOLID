@@ -4,12 +4,10 @@ import 'repository.dart';
 
 class FetchUserRepositoryImpl implements FetchUserRepository {
   //método que está sendo implementado da classe abstrata
-  final dio = Dio();
 
   @override
-  Future<FlutterandoUser> fetchUser() async {
-    final response =
-        await Dio().get('https://api.github.com/users/Flutterando');
+  Future<FlutterandoUser> fetchUser(Dio dio) async {
+    final response = await dio.get('https://api.github.com/users/Flutterando');
 
     var flutterandoUser = FlutterandoUser(
         login: response.data['login'],

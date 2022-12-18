@@ -8,7 +8,7 @@
       "name": "desafio-1",
       "request": "launch",
       "type": "dart",
-      "program": "example/desafio_1_example.dart"
+      "program": "lib/desafio_1_example.dart"
     }
   ]
 }

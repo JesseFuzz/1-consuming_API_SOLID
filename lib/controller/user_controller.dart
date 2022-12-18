@@ -1,16 +1,13 @@
 import '../repositories/repository.dart';
 
 class UserController {
-  //o tipo é a interface, não a a implementação
   final FetchUserRepository _repository;
 
   const UserController({required FetchUserRepository repository})
       : _repository = repository;
 
   Future<void> fetchUser() async {
-    //aqui eu recebo o método do repository
     final response = await _repository.fetchUser();
-    //aqui eu somente printo o retorno do método
 
     print(response.login);
     print(response.blog);

@@ -1,15 +1,17 @@
+import 'package:desafio_1/services/Client/response_aux.dart';
 import 'package:dio/dio.dart';
 import '../http_service.dart';
 import 'package:dio/dio.dart' hide Response;
 
 class DioService implements IHttpService {
-  //isso é uma injeção de dependência
   final Dio _dio;
 
   const DioService(this._dio);
 
   @override
-  Future<Response> get(String url) async {
-    return (await _dio.get(url));
+  Future<ResponseAux> get(String url) async {
+    final dioResponse = (await _dio.get(url));
+    final responseAux = ResponseAux(dioResponse.data);
+    return responseAux;
   }
 }

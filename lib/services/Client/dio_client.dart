@@ -1,4 +1,4 @@
-import 'package:desafio_1/services/Client/response_aux.dart';
+import 'package:desafio_1/services/client/response_aux.dart';
 import 'package:dio/dio.dart';
 import '../http_service.dart';
 import 'package:dio/dio.dart' hide Response;

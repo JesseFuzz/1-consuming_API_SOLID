@@ -52,13 +52,13 @@ class GitHubUserModel {
       required this.type,
       required this.siteAdmin,
       required this.name,
-      final this.company,
+      this.company,
       required this.blog,
       required this.location,
       required this.email,
-      final this.hireable,
-      final this.bio,
-      final this.twitterUsername,
+      this.hireable,
+      this.bio,
+      this.twitterUsername,
       required this.publicRepos,
       required this.publicGists,
       required this.followers,
@@ -66,6 +66,8 @@ class GitHubUserModel {
       required this.createdAt,
       required this.updatedAt});
 
+//dart um json é string
+//json é um mapa de chave string e valor dynamic normalmente
   factory GitHubUserModel.fromJson({required Map<String, dynamic> json}) {
     return GitHubUserModel(
       login: json['login'],
@@ -101,5 +103,9 @@ class GitHubUserModel {
       createdAt: json['created_at'],
       updatedAt: json['updated_at'],
     );
+  }
+  @override
+  String toString() {
+    return 'login: $login, id: $id, nodeId: $nodeId, avatarUrl: $avatarUrl, gravatarId: $gravatarId, url: $url, htmlUrl: $htmlUrl, followersUrl: $followersUrl, followingUrl: $followingUrl, gistsUrl: $gistsUrl, starredUrl: $starredUrl, subscriptionsUrl: $subscriptionsUrl, organizationsUrl: $organizationsUrl, reposUrl: $reposUrl, eventsUrl: $eventsUrl, receivedEventsUrl: $receivedEventsUrl, type: $type, siteAdmin: $siteAdmin, name: $name, company: $company, blog: $blog, location: $location, email: $email, hireable: $hireable, bio: $bio, twitterUsername: $twitterUsername, publicRepos: $publicRepos, publicGists: $publicGists, followers: $followers, following: $following, createdAt: $createdAt, updatedAt: $updatedAt';
   }
 }

@@ -1,3 +1,5 @@
+import 'client/response_aux.dart';
+
 abstract class IHttpService {
-  Future<dynamic> get(String url);
+  Future<ResponseAux> get(String url);
 }
